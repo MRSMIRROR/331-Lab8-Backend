@@ -1,6 +1,7 @@
 package se331.lab.dao;
 
 import jakarta.annotation.PostConstruct;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Repository;
 import se331.lab.entity.Event;
 
@@ -9,6 +10,7 @@ import java.util.List;
 
 
 @Repository
+@Profile("manual")
 public class EventDaoImpl implements EventDao {
     List<Event> eventList;
 
