@@ -12,7 +12,6 @@ import se331.lab.entity.Event;
 
 import se331.lab.service.EventService;
 
-import java.util.List;
 @Controller
 @RequiredArgsConstructor
 public class EventController {
@@ -20,6 +19,8 @@ public class EventController {
     @GetMapping("/events")
     public ResponseEntity<?> getEventLists(@RequestParam(value = "_limit", required = false) Integer perPage
         ,@RequestParam(value = "_page", required = false) Integer page){
+        perPage = perPage == null ? eventService.getEventSize() : perPage;
+        page = page == null ? 1 : page;
         Page<Event> pageOutput = eventService.getEvents(perPage, page);
         HttpHeaders responseHeaders = new HttpHeaders();
         responseHeaders.set("x-total-count", String.valueOf(pageOutput.getTotalElements()));

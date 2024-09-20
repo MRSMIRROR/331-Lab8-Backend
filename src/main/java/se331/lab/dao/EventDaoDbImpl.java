@@ -8,9 +8,6 @@ import org.springframework.stereotype.Repository;
 import se331.lab.entity.Event;
 import se331.lab.repository.EventRepository;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Repository
 @RequiredArgsConstructor
 @Profile("db")

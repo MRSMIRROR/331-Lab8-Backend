@@ -12,6 +12,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class EventServicelmpl implements EventService{
     final EventDao eventDao;
+
     @Override
     public Integer getEventSize() {
         return eventDao.getEventSize();
